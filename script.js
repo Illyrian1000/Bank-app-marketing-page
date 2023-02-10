@@ -8,6 +8,8 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 
+const header = document.querySelector(".header");
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");
@@ -39,7 +41,27 @@ document.addEventListener("keydown", function (e) {
 //
 //
 //
+
+// Adding the cookie pop-up
 const message = document.createElement("div");
 message.classList.add("cookie-message");
 
-message.textContent = `We use cookies to improve your browsing experience `;
+// button to close it
+message.innerHTML = `We use cookies to improve your browsing experience <button class="btn btn--close--cookie">Got it </button>`;
+
+header.prepend(message);
+
+// delete it on click
+const closeCookie = document.querySelector(".btn--close--cookie");
+
+closeCookie.addEventListener("click", function () {
+  message.remove();
+});
+
+message.style.backgroundColor = "#37383d";
+message.style.width = `120%`;
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+
+console.log(message.style.height);
