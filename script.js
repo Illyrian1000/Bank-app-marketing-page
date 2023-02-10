@@ -32,3 +32,14 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+//
+//
+//
+//
+//
+//
+const message = document.createElement("div");
+message.classList.add("cookie-message");
+
+message.textContent = `We use cookies to improve your browsing experience `;
