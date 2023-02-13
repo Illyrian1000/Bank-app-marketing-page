@@ -64,13 +64,13 @@ message.style.width = `120%`;
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
 
-console.log(message.style.height);
-
-// document.documentElement.style.setProperty("--color-primary", "orangered");
+document.documentElement.style.setProperty("--color-primary", "orangered");
 
 const logo = document.querySelector(".nav__logo");
+const navbar = document.querySelector(".nav");
 
-console.log(logo.className);
-
-logo.alt = "beautiful logo";
-console.log(logo.alt);
+const link = document.createElement("a");
+link.setAttribute("href", "https://www.google.com");
+link.setAttribute("target", "_blank");
+link.appendChild(logo);
+navbar.prepend(link);
